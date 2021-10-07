@@ -43,3 +43,20 @@ stages:
     - path: model.pkl
       md5: 5c9081b39ae0c54eace25d032d0820f7
       size: 2658184
+  evaluate:
+    cmd: python src/evaluate.py model.pkl data/features auc.metric
+    deps:
+    - path: data/features
+      md5: 2b5e0fdd787b569b4fcb4bafa543d270.dir
+      size: 7083899
+      nfiles: 2
+    - path: model.pkl
+      md5: 5c9081b39ae0c54eace25d032d0820f7
+      size: 2658184
+    - path: src/evaluate.py
+      md5: 3a318bb2217d463d0fe9b56b4f82d549
+      size: 1990
+    outs:
+    - path: auc.metric
+      md5: b614944af6d91184999762e360238513
+      size: 73
